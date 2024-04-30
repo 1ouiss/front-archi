@@ -11,7 +11,15 @@ export const OrderRepository = () => {
     });
   };
 
+  const fetchGetOrders = async () => {
+    const response = await fetch("http://localhost:3000/orders");
+    const orders = await response.json();
+
+    return orders;
+  };
+
   return {
     fetchCreateOrder,
+    fetchGetOrders,
   };
 };

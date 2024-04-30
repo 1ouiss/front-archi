@@ -1,10 +1,17 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import CreateOrderPage from "./order/presentation/page/CreateOrderPage";
+import GetOrdersPage from "./order/presentation/page/GetOrdersPage";
 
 function App() {
   return (
     <>
-      <CreateOrderPage />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/create-order" element={<CreateOrderPage />} />
+          <Route path="/get-orders" element={<GetOrdersPage />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
